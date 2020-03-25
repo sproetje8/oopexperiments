@@ -20,6 +20,12 @@
 		"quotes": ["error", "single"],
 		"linebreak-style": "off",
 		"indent": ["error", "tab"],
-		"no-tabs": "off"
+		"no-tabs": "off",
+		"overrides": {
+			"files": ["*.test.js"],
+			"rules": {
+				"no-undef": "off"
+			}
+		}
 	}
 }
