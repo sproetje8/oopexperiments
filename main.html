@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mastering JS OOP
+	</title>
+</head>
+<body>
+	<h1>Mastering JavaScript OOP - Practice</h1>
+	<script>
+		// literal object notation
+// let person = {
+// 	name: "Peter",
+// 	lastName: "Wilkins",
+// 	showFullName: function () {
+// 		return "Peter Wilkins";
+// 	}
+// };
+
+// methods notation
+// let person = {
+// 	name: "j\John",
+// 	surname: "Smith",
+// 	showFullName: function () {
+// 		return "John Smith";
+// 	// as of ES 2015: showFullName () { return "John Smith";}
+// 	}
+// };
+
+// function constructors
+// function Person (name, surname) {
+// 	'use strict';
+// 	this.name = "";
+// 	this.surname = "";
+// 	this.address = "";
+// 	this.email = "";
+
+// 	this.displayFullName = function () {
+// 		return `${this.name} ${this.surname}`;
+// 	};
+// }
+
+// let johnSmith = new Person();
+// johnSmith.name = "John";
+// johnSmith.surname = "Smith";
+
+// let marioRossi = new Person();
+// marioRossi.name = "Mario";
+// marioRossi.surname = "Rossi";
+// let johnSmith = new Person("John", "Smith");
+// let marioRossi = new Person("Mario", "Rossi");
+
+// the Object() constructor
+// let person = new Object();
+// person.name = "Roi";
+// person.surname = "Orbinson";
+
+// let person1 = {};
+
+// console.log(person1.constructor == Object);
+// console.log(person.constructor == Object);
+// console.log(person.constructor == person1.constructor);
+// console.log(person == person1);
+
+// person.greet = function () {
+// 	console.log("Hello, this is " + this.name + " " + this.surname + "!");
+// };
+// console.log(person);
+
+// function Person (name, surname) {
+// 	this.name = name;
+// 	this.surname = surname;
+// }
+
+// Person.prototype.greet = function () {
+// 	console.log("Hello, this is " + this.name + " " + this.surname + "!");
+// }
+
+// let person2 = new Person("Walter", "Ericson");
+// console.log(person2);
+
+// person2.greet();
+
+// console.log(person2.__proto__);
+// console.log(Person.prototype);
+// console.log(Person.__proto__);
+
+// Using Classes
+let Person = class {
+	// the constructor is a method that defines and 
+	// initializes the properties 
+	constructor(name, surname) { 
+		this.name = name;
+		this.surname = surname;
+	}
+}
+console.log(typeof Person);
+
+let person5 = new Person("Will", "Marks");
+
+class myClass {
+	constructor(value1) {
+		return { property1: value1, property2: "" };
+	}
+}
+
+let x = new myClass("foo");
+
+console.log(x);
+
+function Human(name, surname) {
+	this.name = name;
+	this.surname = surname;
+	this.parent = null;
+}
+
+let alexBeats = new Human("John", "Smith");
+let bennyBeats = new Human("Benny", "Beats");
+
+// association (two independent objects have a relation to each other)
+bennyBeats.parent = alexBeats;
+
+// aggregation (one object has a major role over another one)
+let company = {
+	name: "Comp Inc.",
+	employees: []
+};
+
+let chrisDamon = new Person("Chris", "Damon");
+let EricFoster = new Person("Eric", "Foster");
+
+company.employees.push(chrisDamon);
+company.employees.push(EricFoster);
+console.log(company.employees);
+
+// composition (object inside another object)
+let person6 = {
+	name: "George",
+	surname: "Hellington",
+	address: {
+		street: "12 Duncannon Street",
+		city: "New York",
+		country: "United States"
+	}
+};
+
+// encapsulation, information hiding
+function Company (name) {
+	let employees = [];
+	this.name = name;
+
+	this.getEmployees = function () {
+		return employees;
+	};
+
+	this.addEmployee = function (employee) {
+		employees.push(employee);
+	};
+}
+
+let myCompany = new Company ("Manfo");
+
+console.log(myCompany.getEmployees());
+myCompany.addEmployee("Ingrid Jackson");
+myCompany.addEmployee("Kyle Lamy");
+
+console.log(myCompany.getEmployees());
+console.log(myCompany); // the company object without details
+console.log(myCompany.employees); // undefined
+
+// inheritance
+function Man () {
+	this.name = "";
+	this.surname = "";
+}
+
+function Programmer () {
+	this.knownLanguage = "";
+}
+
+Programmer.prototype = new Man();
+
+let programmer = new Programmer();
+
+
+// polymorphism
+
+	</script>
+</body>
+</html>
